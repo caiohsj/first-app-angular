@@ -3,11 +3,13 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
+import { TaskFormComponent } from './task-form/task-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [AppComponent, HeaderComponent, TasksListComponent]
+    imports: [RouterTestingModule, ReactiveFormsModule],
+    declarations: [AppComponent, HeaderComponent, TasksListComponent, TaskFormComponent],
   }));
 
   it('should create the app', () => {
