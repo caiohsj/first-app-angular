@@ -12,11 +12,12 @@ export class TaskFormComponent {
   constructor(private taskService: TaskService) { }
 
   taskForm = new FormGroup({
-    description: new FormControl('', [Validators.required])
-  });
+    description: new FormControl('', [Validators.required]),
+    status: new FormControl('open', { nonNullable: true })
+  }); 
 
   onSubmit() {
-    const description = String(this.taskForm.get('description')?.value);
-    this.taskService.addTask({ description, status: "open" });
+    const { description, status } = this.taskForm.value;
+    if (this.taskForm.valid) this.taskService.addTask({ description: String(description), status: String(status) });
   }
 }
