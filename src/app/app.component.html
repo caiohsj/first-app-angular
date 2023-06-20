@@ -1,7 +1,18 @@
 <app-header [title]="title"></app-header>
 
-<app-task-form></app-task-form>
-
-<app-tasks-list [tasks]="tasksList"></app-tasks-list>
+<div class="grid">
+  <div class="list open">
+    <span>open</span>
+    <app-tasks-list [tasks]="openTasksList"></app-tasks-list>
+  </div>
+  <div class="list in-progress">
+    <span>in progress</span>
+    <app-tasks-list [tasks]="inProgressTasksList"></app-tasks-list>
+  </div>
+  <div class="list completed">
+    <span>completed</span>
+    <app-tasks-list [tasks]="completedTasksList"></app-tasks-list>
+  </div>
+</div>
 
 <router-outlet></router-outlet>

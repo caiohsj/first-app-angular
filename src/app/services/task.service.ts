@@ -6,15 +6,21 @@ import { Task } from '../@types/task';
 })
 export class TaskService {
 
-  tasks: Task[] = []
-
-  constructor() { }
-
-  getTasks() {
-    return this.tasks;
-  }
+  openTasks: Task[] = [];
+  inProgressTasks: Task[] = [];
+  completedTasks: Task[] = [];
 
   addTask(task: Task) {
-    this.tasks.push(task);
+    switch(task.status) {
+      case 'open':
+        this.openTasks.push(task);
+        break;
+      case 'inProgress':
+        this.inProgressTasks.push(task);
+        break;
+      case 'completed':
+        this.completedTasks.push(task);
+        break;
+    }
   }
 }

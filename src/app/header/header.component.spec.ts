@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
+import { TaskFormComponent } from '../task-form/task-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -8,7 +10,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HeaderComponent]
+      declarations: [HeaderComponent, TaskFormComponent],
+      imports: [ReactiveFormsModule]
     });
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;

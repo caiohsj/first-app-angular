@@ -1,11 +1,9 @@
 <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
-  <label for="description">Descrição: </label>
   <input id="description" type="text" formControlName="description">
-  <label for="status">Descrição: </label>
   <select id="status" formControlName="status">
-    <option value="open" selected>Aberto</option>
-    <option value="inProgress">Em progresso</option>
-    <option value="completed">Completado</option>
+    <option value="open" selected>Open</option>
+    <option value="inProgress">In Progress</option>
+    <option value="completed">Completed</option>
   </select>
   <button type="submit" [disabled]="!taskForm.valid">Salvar</button>
 </form>

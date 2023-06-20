@@ -1,0 +1,45 @@
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    padding: 0 40px;
+    gap: 32px;
+  
+    .list {
+      span {
+        display: block;
+        margin-bottom: 20px;
+        width: fit-content;
+        border-radius: 16px;
+        border-bottom-left-radius: 0;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        padding: 6px 10px;
+      }
+
+      &.open {
+        span {
+          background-color: #FA43DF;
+        }
+      }
+
+      &.in-progress {
+        span {
+          background-color: #6CC6E9;
+        }
+      }
+
+      &.completed {
+        span {
+          background-color:  #58d68d;
+        }
+      }
+    }
+  }
+}
